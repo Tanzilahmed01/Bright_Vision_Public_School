@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admission - Bright Vision Public School</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── Page-hero slideshow ── */
+    .page-slideshow {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Every slide fills the hero box, hidden by default */
+    .page-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.9s ease-in-out;
+      z-index: 0;
+    }
+
+    /* Active slide is fully visible */
+    .page-slide.active {
+      opacity: 1;
+    }
+
+    /* Dark overlay so text stays readable over photos */
+    .page-slideshow::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Hero text must sit above the overlay */
+    .page-slideshow > div[style*="z-index:2"] {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    /* Dots */
+    .slide-dots {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .slide-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .slide-dots .dot.active {
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">&#127775;</div>
+    <div class="nav-logo-text">
+      Bright Vision Public School
+      <span>Learn Today... Lead Tomorrow</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="about.html">About</a>
+    <a class="nav-btn active" href="admission.html">Admission</a>
+    <a class="nav-btn" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ========== ADMISSION PAGE ========== -->
+<div id="page-admission" class="page active">
+
+  <!-- HERO SLIDER -->
+  <!-- ✅ FIX: NO inline opacity on slides 2 & 3 — JS controls opacity via .active class -->
+  <div class="adm-hero page-slideshow" id="adm-hero">
+
+    <div class="page-slide active" style="background-image:url('StudyTime.jpg')"></div>
+    <div class="page-slide"        style="background-image:url('PlayTime.jpg')"></div>
+    <div class="page-slide"        style="background-image:url('PlayTime.jpg')"></div>
+
+    <!-- Hero text (z-index:2 lifts it above the overlay) -->
+    <div style="position:relative;z-index:2;text-align:center;color:#fff;">
+      <div class="adm-tag">Now Open &mdash; 2026-27 Session</div>
+      <h1>Admission</h1>
+      <p>Join the Bright Vision family &mdash; simple process, warm welcome</p>
+    </div>
+
+    <!-- Dots -->
+    <div class="slide-dots page-dots" style="bottom:14px;">
+      <div class="dot active" onclick="goPageSlide('adm',0)"></div>
+      <div class="dot"        onclick="goPageSlide('adm',1)"></div>
+      <div class="dot"        onclick="goPageSlide('adm',2)"></div>
+    </div>
+
+  </div><!-- end adm-hero -->
+
+  <div class="section">
+
+    <!-- HIGHLIGHT BANNER -->
+    <div class="highlight-banner">
+      <img src="StudyTime.jpg" alt="Students"/>
+      <div>
+        <h3>Nursery to Class 8 &mdash; Admissions Open!</h3>
+        <p>Quality education with CBSE pattern, computer lab, smart classes, English speaking focus, Urdu language, and monthly PTMs. Limited seats &mdash; apply today!</p>
+      </div>
+    </div>
+
+    <!-- ADMISSION PROCESS -->
+    <div class="section-title">Admission Process</div>
+    <div class="divider"></div>
+    <div style="margin-bottom:26px;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-info">
+          <h4>Fill the Application Form</h4>
+          <p>Complete the online or offline form with student and parent details.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-info">
+          <h4>Document Submission</h4>
+          <p>Submit birth certificate, report card, Aadhaar card, and 2 passport photos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-info">
+          <h4>Interaction / Assessment</h4>
+          <p>A friendly interaction session for the child and parents with our staff.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-info">
+          <h4>Fee Payment &amp; Confirmation</h4>
+          <p>Pay the admission fee to confirm and secure your child's seat.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-info">
+          <h4>Welcome to Bright Vision!</h4>
+          <p>Receive school kit, timetable, and uniform details. Class begins!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEE STRUCTURE -->
+    <div class="section-title">Fee Structure (2026&ndash;27)</div>
+    <div class="divider"></div>
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th>Grade</th>
+          <th>Admission Fee</th>
+          <th>Monthly Fee</th>
+          <th>Annual Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Nursery &ndash; KG</td><td>&#8377;1,500</td><td>&#8377;600</td><td>&#8377;8,700</td></tr>
+        <tr><td>Grade 1 &ndash; 2</td><td>&#8377;2,000</td><td>&#8377;800</td><td>&#8377;11,600</td></tr>
+        <tr><td>Grade 3 &ndash; 5</td><td>&#8377;2,500</td><td>&#8377;1,000</td><td>&#8377;14,500</td></tr>
+        <tr><td>Grade 6 &ndash; 8</td><td>&#8377;3,000</td><td>&#8377;1,200</td><td>&#8377;17,400</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ONLINE APPLICATION FORM -->
+    <div class="apply-form">
+      <h3>Apply Online</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Student Full Name</label>
+          <input type="text" id="studentName" placeholder="e.g. Tanzil Ahmed"/>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" id="dob"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Applying for Grade</label>
+          <select id="grade">
+            <option value="">Select Grade</option>
+            <option>Nursery</option><option>KG</option>
+            <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+            <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+            <option>Grade 7</option><option>Grade 8</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Parent / Guardian Name</label>
+          <input type="text" id="parentName" placeholder="e.g. Shakil Ahmed"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" id="admMobile" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="admEmail" placeholder="parent@email.com"/>
+        </div>
+      </div>
+      <button class="submit-btn" onclick="submitAdmission(this)">Submit Application</button>
+    </div>
+
+  </div><!-- end section -->
+
+</div><!-- end page-admission -->
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <p><strong>Bright Vision Public School</strong> &mdash; 01 Rishika Nagar, Khargone, Madhya Pradesh</p>
+  <p>&#128222; 9981975043 &nbsp;|&nbsp; 9009019819 &nbsp;|&nbsp; &copy; 2026 All Rights Reserved</p>
+  <p style="margin-top:4px;font-size:11px;color:#7F77DD;">Learn Today... Lead Tomorrow</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

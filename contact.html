@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Bright Vision Public School</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">&#127775;</div>
+    <div class="nav-logo-text">
+      Bright Vision Public School
+      <span>Learn Today... Lead Tomorrow</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="about.html">About</a>
+    <a class="nav-btn" href="admission.html">Admission</a>
+    <a class="nav-btn active" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ========== CONTACT PAGE ========== -->
+<div id="page-contact" class="page active">
+
+  <div class="contact-hero-wrap page-slideshow" id="contact-hero">
+    <div class="page-slide active" style="background-image:url('SchoolStaff.jpg')"></div>
+    <div class="page-slide" style="background-image:url('AwardCeromany.jpg')"></div>
+    <div class="page-slide" style="background-image:url('StudyTime.jpg')"></div>
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-content">
+      <h1>Contact Us</h1>
+      <p>We&rsquo;d love to hear from you &mdash; reach out anytime</p>
+    </div>
+    <div class="slide-dots page-dots">
+      <div class="dot active" onclick="goPageSlide('contact',0)"></div>
+      <div class="dot" onclick="goPageSlide('contact',1)"></div>
+      <div class="dot" onclick="goPageSlide('contact',2)"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="contact-grid">
+      <div>
+        <div class="info-card">
+          <div class="info-icon">&#128205;</div>
+          <div><h4>Address</h4><p>01 Rishika Nagar,<br>Khargone, Madhya Pradesh &mdash; 451001</p></div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128222;</div>
+          <div><h4>Phone</h4><p>9981975043<br>9009019819</p></div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#9993;&#65039;</div>
+          <div><h4>Email</h4><p>brightvisionschool@gmail.com<br>mashkoor.brightvision@gmail.com</p></div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128336;</div>
+          <div><h4>Office Hours</h4><p>Monday &ndash; Saturday<br>9:00 AM &ndash; 2:00 PM</p></div>
+        </div>
+        <div class="map-box">
+          <div>
+            <div style="font-size:30px;">&#128506;&#65039;</div>
+            <p style="margin-top:6px;">Bright Vision Public School<br>01 Rishika Nagar, Khargone MP</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <input type="text"  id="contactName"    placeholder="Your Full Name"/>
+        <input type="email" id="contactEmail"   placeholder="Your Email Address"/>
+        <input type="tel"   id="contactPhone"   placeholder="Your Phone Number"/>
+        <input type="text"  id="contactSubject" placeholder="Subject"/>
+        <textarea           id="contactMessage" placeholder="Write your message here..."></textarea>
+        <button class="submit-btn" onclick="submitContact(this)">Send Message</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end page-contact -->
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <p><strong>Bright Vision Public School</strong> &mdash; 01 Rishika Nagar, Khargone, Madhya Pradesh</p>
+  <p>&#128222; 9981975043 &nbsp;|&nbsp; 9009019819 &nbsp;|&nbsp; &copy; 2026 All Rights Reserved</p>
+  <p style="margin-top:4px;font-size:11px;color:#7F77DD;">Learn Today... Lead Tomorrow</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
